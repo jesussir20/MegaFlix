@@ -18,6 +18,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+     <nav class="navbar navbar-expand-lg navbar-megaflix">
+  <div class="container-fluid px-0">
+     <div class="logo">
+      <a href="#">
+        <img src="./images/logo.png" alt="Megaflix" class="logo-img" />
+      </a>
+    </div>
+    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#megaflixNavbarContent" aria-controls="megaflixNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="megaflixNavbarContent">
+      
+      <ul class="navbar-nav nav-menu me-auto mb-3 mb-lg-0">
+        <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
+        <li class="nav-item"><a href="#">Películas</a></li>
+        <li class="nav-item"><a href="#">Series</a></li>
+        <li class="nav-item"><a href="#">Categorías</a></li>
+      </ul>
+
+      <div class="nav-right-group">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar películas, series..." />
+        </div>
+        <button class="btn-login" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</button>
+        <button class="btn-subscribe" data-bs-toggle="modal" data-bs-target="#plansModal">Suscribirse</button>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
+
     <header
       id="heroCarousel"
       class="carousel slide carousel-fade"
