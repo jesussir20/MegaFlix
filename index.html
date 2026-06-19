@@ -92,6 +92,7 @@
         ></button>
       </div>
 
+      <!-- CONTENIDO DEL CARRUSEL -->
       <div class="carousel-inner">
         <div class="carousel-item active item-slide-1">
           <div class="hero-overlay">
@@ -117,8 +118,14 @@
                 Goldstein sobre adictos al trabajo en un enredo amoroso.
               </p>
               <div class="hero-buttons">
-                <button class="btn-play">▶ Ver ahora</button>
-                <button class="btn-mylist">+ Mi lista</button>
+                <a href="./error/404.html" class="btn-play" style="text-decoration: none; display: inline-block" >▶ Ver ahora</a>
+                <button
+                  class="btn-more-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPeli1"
+                >
+                  Más info
+                </button>
               </div>
             </div>
           </div>
@@ -149,8 +156,14 @@
                 policía federal.
               </p>
               <div class="hero-buttons">
-                <button class="btn-play">▶ Ver ahora</button>
-                <button class="btn-mylist">+ Mi lista</button>
+                <a href="./error/404.html" class="btn-play" style="text-decoration: none; display: inline-block" >▶ Ver ahora</a>
+                <button
+                  class="btn-more-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPeli2"
+                >
+                  Más info
+                </button>
               </div>
             </div>
           </div>
@@ -181,8 +194,14 @@
                 digitales modernas.
               </p>
               <div class="hero-buttons">
-                <button class="btn-play">▶ Ver ahora</button>
-                <button class="btn-mylist">+ Mi lista</button>
+                <a href="./error/404.html" class="btn-play" style="text-decoration: none; display: inline-block" >▶ Ver ahora</a>
+                <button
+                  class="btn-more-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPeli3"
+                >
+                  Más info
+                </button>
               </div>
             </div>
           </div>
@@ -213,8 +232,14 @@
                 socio-cultural.
               </p>
               <div class="hero-buttons">
-                <button class="btn-play">▶ Ver ahora</button>
-                <button class="btn-mylist">+ Mi lista</button>
+                <a href="./error/404.html" class="btn-play" style="text-decoration: none; display: inline-block" >▶ Ver ahora</a>
+                <button
+                  class="btn-more-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPeli4"
+                >
+                  Más info
+                </button>
               </div>
             </div>
           </div>
@@ -245,8 +270,14 @@
                 un robo histórico.
               </p>
               <div class="hero-buttons">
-                <button class="btn-play">▶ Ver ahora</button>
-                <button class="btn-mylist">+ Mi lista</button>
+                <a href="./error/404.html" class="btn-play" style="text-decoration: none; display: inline-block" >▶ Ver ahora</a>
+                <button
+                  class="btn-more-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalPeli5"
+                >
+                  Más info
+                </button>
               </div>
             </div>
           </div>
@@ -398,6 +429,156 @@
         </div>
       </div>
     </div>
+    <!-- MODAL MAS INFO -->
+    <div class="modal fade" id="modalPeli1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-movie-content">
+            <button type="button" class="btn-close-movie" data-bs-dismiss="modal">✕</button>
+            <div class="modal-movie-video-container">
+                <video class="modal-movie-video" autoplay loop muted playsinline>
+                    <source src="./videos/Turbulencia en la oficina.mp4" type="video/mp4">
+                </video>
+                <div class="modal-movie-overlay"></div>
+            </div>
+            <div class="modal-movie-body">
+                <div class="movie-info-text-block">
+                    <h2 class="modal-movie-title">TURBULENCIA EN LA<span class="accent-green"> OFICINA</span></h2>
+                    <div class="modal-movie-metadata">
+                        <span class="meta-rating"><i class="fa-solid fa-star"></i> 9.1</span>
+                        <span class="meta-year">2026</span>
+                        <span class="meta-duration"><i class="fa-regular fa-clock"></i> 1h 53min</span>
+                    </div>
+                    <p class="modal-movie-description">
+                        Comedia romántica protagonizada por Jennifer Lopez y Brett Goldstein sobre adictos al trabajo en un enredo amoroso.
+                    </p>
+                    <div class="modal-movie-buttons">
+                        <a href="./error/404.html" class="btn-modal-play" style="text-decoration: none; display: inline-block;">▶ Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPeli2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-movie-content">
+            <button type="button" class="btn-close-movie" data-bs-dismiss="modal">✕</button>
+            <div class="modal-movie-video-container">
+                <video class="modal-movie-video" autoplay loop muted playsinline>
+                    <source src="./videos/las dos caras de la ley.mp4" type="video/mp4">
+                </video>
+                <div class="modal-movie-overlay"></div>
+            </div>
+            <div class="modal-movie-body">
+                <div class="movie-info-text-block">
+                    <h2 class="modal-movie-title">LAS DOS CARAS<span class="accent-purple"> DE LA LEY</span></h2>
+                    <div class="modal-movie-metadata">
+                        <span class="meta-rating"><i class="fa-solid fa-star"></i> 9.1</span>
+                        <span class="meta-year">2026</span>
+                        <span class="meta-duration"><i class="fa-solid fa-tv"></i> 1 Temporada</span>
+                    </div>
+                    <p class="modal-movie-description">
+                        Serie de investigación y misterio agregada recientemente. El suspenso se apodera de cada pista en un caso sin resolver de la policía federal.
+                    </p>
+                    <div class="modal-movie-buttons">
+                        <a href="./error/404.html" class="btn-modal-play" style="text-decoration: none; display: inline-block;">▶ Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPeli3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-movie-content">
+            <button type="button" class="btn-close-movie" data-bs-dismiss="modal">✕</button>
+            <div class="modal-movie-video-container">
+                <video class="modal-movie-video" autoplay loop muted playsinline>
+                    <source src="./videos/hit viral.mp4" type="video/mp4">
+                </video>
+                <div class="modal-movie-overlay"></div>
+            </div>
+            <div class="modal-movie-body">
+                <div class="movie-info-text-block">
+                    <h2 class="modal-movie-title">HIT<span class="accent-red"> VIRAL</span></h2>
+                    <div class="modal-movie-metadata">
+                        <span class="meta-rating"><i class="fa-solid fa-star"></i> 9.5</span>
+                        <span class="meta-year">2026</span>
+                        <span class="meta-duration"><i class="fa-solid fa-tv"></i> 1 Temporada</span>
+                    </div>
+                    <p class="modal-movie-description">
+                        Un nuevo fenómeno audiovisual que retrata la crudeza, la fama y la obsesión desmedida en el centro de las redes sociales digitales modernas.
+                    </p>
+                    <div class="modal-movie-buttons">
+                        <a href="./error/404.html" class="btn-modal-play" style="text-decoration: none; display: inline-block;">▶ Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPeli4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-movie-content">
+            <button type="button" class="btn-close-movie" data-bs-dismiss="modal">✕</button>
+            <div class="modal-movie-video-container">
+                <video class="modal-movie-video" autoplay loop muted playsinline>
+                    <source src="./videos/México 86.mp4" type="video/mp4">
+                </video>
+                <div class="modal-movie-overlay"></div>
+            </div>
+            <div class="modal-movie-body">
+                <div class="movie-info-text-block">
+                    <h2 class="modal-movie-title">MEXICO<span class="accent-orange"> 86</span></h2>
+                    <div class="modal-movie-metadata">
+                        <span class="meta-rating"><i class="fa-solid fa-star"></i> 8.9</span>
+                        <span class="meta-year">2026</span>
+                        <span class="meta-duration"><i class="fa-regular fa-clock"></i> 1h 35min</span>
+                    </div>
+                    <p class="modal-movie-description">
+                        Una mirada íntima y cinematográfica que sigue la historia del inolvidable Mundial de Fútbol en México y su profundo impacto socio-cultural.
+                    </p>
+                    <div class="modal-movie-buttons">
+                        <a href="./error/404.html" class="btn-modal-play" style="text-decoration: none; display: inline-block;">▶ Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalPeli5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-movie-content">
+            <button type="button" class="btn-close-movie" data-bs-dismiss="modal">✕</button>
+            <div class="modal-movie-video-container">
+                <video class="modal-movie-video" autoplay loop muted playsinline>
+                    <source src="./videos/Berlín.mp4" type="video/mp4">
+                </video>
+                <div class="modal-movie-overlay"></div>
+            </div>
+            <div class="modal-movie-body">
+                <div class="movie-info-text-block">
+                    <h2 class="modal-movie-title">BERLÍN Y LA <span class="accent-premium">DAMA DEL ARMIÑO</span></h2>
+                    <div class="modal-movie-metadata">
+                        <span class="meta-rating"><i class="fa-solid fa-star"></i> 9.3</span>
+                        <span class="meta-year">2026</span>
+                        <span class="meta-duration"><i class="fa-solid fa-tv"></i> 2 Temporadas</span>
+                    </div>
+                    <p class="modal-movie-description">
+                        Berlín reúne a su banda en Sevilla dispuesto a ejecutar un plan maestro: transformar a un ambicioso duque en la víctima ideal de un robo histórico.
+                    </p>
+                    <div class="modal-movie-buttons">
+                        <a href="./error/404.html" class="btn-modal-play" style="text-decoration: none; display: inline-block;">▶ Ver ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- FOOTER -->
     <footer class="footer-megaflix">
       <div class="footer-container">
