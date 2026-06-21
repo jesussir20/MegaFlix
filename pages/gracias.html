@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Plataforma de streaming de películas y series">
+    <meta name="keywords" content="películas, series, streaming, entretenimiento">
+    <meta name="author" content="Tech Flow">
+    <title>¡Gracias por tu mensaje! - MEGAFLIX</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./contact.css"/>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  </head>
+  <body class="body-contact">
+    <nav class="navbar navbar-expand-lg navbar-megaflix">
+      <div class="container-fluid">
+        <a class="navbar-brand logo" href="../index.html">
+          <img src="../images/logo.png" alt="MEGAFLIX" class="logo-img" />
+        </a>
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav-menu me-auto">
+            <li class="nav-item"><a href="#" class="active">Inicio</a></li>
+            <li class="nav-item"><a href="#">Películas</a></li>
+            <li class="nav-item"><a href="#">Series</a></li>
+            <li class="nav-item"><a href="#">Categorías</a></li>
+          </ul>
+          <div class="nav-right-group">
+            <form action="../error/404.html" method="GET" class="search-box">
+              <input
+                type="search"
+                name="query"
+                placeholder="🔎 Buscar películas, series..."
+              />
+            </form>
+            <button
+              class="btn-login"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Iniciar Sesión
+            </button>
+            <button
+              class="btn-subscribe"
+              data-bs-toggle="modal"
+              data-bs-target="#plansModal"
+            >
+              Suscribirse
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="contact-section">
+  <div class="contact-container success-message-wrapper">
+    <div class="alert-exit">
+      <span class="success-icon">&#10004;</span>
+      <h3 class="success-title">¡Mensaje enviado con éxito!</h3>
+      <p class="success-text">Nos pondremos en contacto contigo a la brevedad.</p>
+      <a href="../index.html" class="btn-enviar-contact btn-return">Volver al Inicio</a>
+    </div>
+  </div>
+</section>
+    <!-- MODAL PLANES -->
+    <div
+      class="modal fade"
+      id="plansModal"
+      tabindex="-1"
+      aria-labelledby="plansModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content modal-plans-content">
+          <div class="modal-header modal-plans-header">
+            <h2 class="modal-title" id="plansModalLabel">
+              Elegí tu plan ideal en <span>MEGAFLIX</span>
+            </h2>
+            <button
+              type="button"
+              class="btn-close-custom"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          <!-- MODAL SUSCRIPCION -->
+          <div class="modal-body modal-plans-body">
+            <div class="plans-container">
+              <div class="plan-card">
+                <div class="plan-badge">Esencial</div>
+                <h3 class="plan-title">Plan Básico</h3>
+                <div class="plan-price">$2.990<span>/mes</span></div>
+                <ul class="plan-features">
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> 1 Pantalla a
+                    la vez
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Calidad HD
+                    (720p)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Todo el
+                    catálogo libre
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-xmark text-danger"></i> Sin descargas
+                    offline
+                  </li>
+                </ul>
+                <button class="btn-plan-select btn-basico">Elegir Plan</button>
+              </div>
+
+              <div class="plan-card plan-featured-purple">
+                <div class="plan-badge badge-purple-neon">Más Popular</div>
+                <h3 class="plan-title">Plan Estándar</h3>
+                <div class="plan-price">$4.590<span>/mes</span></div>
+                <ul class="plan-features">
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> 2 Pantallas
+                    simultáneas
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Calidad Full
+                    HD (1080p)
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Descargas
+                    offline habilitadas
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Audio Estéreo
+                    Avanzado
+                  </li>
+                </ul>
+                <button class="btn-plan-select btn-estandar">
+                  Elegir Plan
+                </button>
+              </div>
+
+              <div class="plan-card plan-featured-premium">
+                <div class="plan-badge badge-premium-neon">Ultra 4K</div>
+                <h3 class="plan-title">Plan Premium</h3>
+                <div class="plan-price">$6.290<span>/mes</span></div>
+                <ul class="plan-features">
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> 4 Pantallas
+                    en simultáneo
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Calidad Ultra
+                    HD (4K) + HDR
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Descargas en
+                    múltiples dispositivos
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check text-success"></i> Audio
+                    Espacial (Dolby Atmos)
+                  </li>
+                </ul>
+                <button class="btn-plan-select btn-premium-action">
+                  Elegir Premium
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL INICIAR SESION -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-login-content">
+          <div class="modal-header modal-login-header">
+            <h2 class="modal-title" id="loginModalLabel">
+              Iniciar <span>Sesión</span>
+            </h2>
+            <button
+              type="button"
+              class="btn-close-custom"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form class="login-form" action="#" method="POST">
+              <label for="loginUser">Usuario o Correo Electrónico</label>
+              <input
+                type="text"
+                id="loginUser"
+                placeholder="Ej: lucas@megaflix.com o lucas12"
+                required
+                minlength="4"
+              />
+
+              <label for="loginPassword">Contraseña</label>
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Ingresá tu contraseña"
+                required
+                minlength="6"
+              />
+              <a href="./404.html" class="forgot-password-link"
+                >¿Has olvidado tu contraseña?</a
+              >
+              <button type="submit" class="btn-login-submit">Entrar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-megaflix">
+      <div class="footer-container">
+        <div class="footer-col brand-col">
+          <h4>Nuestras Redes</h4>
+          <div class="footer-socials">
+            <a href="../error/404.html"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="../error/404.html"><i class="fa-brands fa-instagram"></i></a>
+            <a href="../error/404.html"><i class="fa-brands fa-twitter"></i></a>
+            <a href="../error/404.html"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Nuestra Empresa</h4>
+          <ul>
+            <li><a href="../pages/sobre-nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="../error/404.html">Prensa</a></li>
+            <li><a href="../error/404.html">Inversores</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soporte y Ayuda</h4>
+          <ul>
+            <li><a href="../pages/contact.html">Contactanos</a></li>
+            <li><a href="../error/404.html">Preguntas Frecuentes</a></li>
+            <li><a href="../error/404.html">Términos de Uso</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 MEGAFLIX. Todos los derechos reservados. Hecho por Tech
+          Flow.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

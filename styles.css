@@ -861,17 +861,22 @@ body {
 }
 
 .btn-login-submit { 
+    /* Tus estilos actuales */
     background: var(--purple-primary); 
     border: none; 
     padding: 12px; 
     color: #fff; 
     font-weight: bold; 
     border-radius: 4px; 
-    cursor: pointer; 
+    cursor: pointer;
+    display: block;        /* Para que ocupe el ancho necesario */
+    text-align: center;    /* Para que el texto quede centrado */
+    text-decoration: none; /* Para quitarle el subrayado azul de los links */
 }
 
 .btn-login-submit:hover { 
-    background: var(--purple-light); 
+    background: var(--purple-light);
+    color: #fff;           /* Aseguramos que el color no cambie al hacer hover */
 }
 
 .footer-megaflix {

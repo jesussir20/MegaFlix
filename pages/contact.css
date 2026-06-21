@@ -1,0 +1,930 @@
+/* ==========================================================================
+   PALETA DE COLORES, VARIABLES Y RESETEO GLOBAL
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #050505;
+  --bg-card: #0b0b0b;
+  --bg-card-hover: #121212;
+  --bg-secondary: #0c0c0e;   
+  --purple-primary: #b026ff; 
+  --purple-light: #c05cff;
+  --purple-dark: #2b004a;    
+  --green-primary: #39ff14; 
+  --green-light: #2eff00;
+  --border-primary: #1a1a1a;
+  --border-secondary: #2a2a2a; 
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted: #666666;      
+  --red-primary: #ff3333;     
+  --radius-md: 12px;
+  --radius-sm: 6px;
+  --radius-lg: 16px;          
+  --radius-xl: 30px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --shadow-green: 0 0 15px rgba(57, 255, 20, 0.4);
+  --shadow-purple: 0 0 15px rgba(176, 38, 255, 0.4);
+  
+  /* Gradiente especial para el Plan Premium */
+  --gradient-premium: linear-gradient(135deg, var(--purple-primary) 0%, var(--green-primary) 100%);
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN (ALINEADA ARRIBA)
+   ========================================================================== */
+.navbar.navbar-megaflix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0) 100%);
+}
+
+/* El único !important necesario para ganarle al display nativo de Bootstrap */
+.navbar.navbar-megaflix .container-fluid {
+    display: flex !important; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start; 
+    width: 100%;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 40px; 
+}
+
+.logo-img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-fast);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.navbar.navbar-megaflix .navbar-collapse {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: auto;
+}
+
+.navbar.navbar-megaflix .nav-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    list-style: none;
+    gap: 30px; 
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-megaflix .nav-menu .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-megaflix .nav-menu a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+    white-space: nowrap; 
+}
+
+.navbar-megaflix .nav-menu a:hover, 
+.navbar-megaflix .nav-menu a.active {
+    color: var(--text-primary);
+}
+
+.navbar-megaflix .nav-menu a.active {
+    position: relative;
+}
+
+.navbar-megaflix .nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--green-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-green);
+}
+
+/* Grupo de la derecha */
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    margin-left: auto; 
+}
+
+.search-box input {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: 8px 16px;
+    color: var(--text-primary);
+    width: 260px;
+    font-size: 13px;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-box input:focus {
+    border-color: var(--green-primary);
+    box-shadow: var(--shadow-green);
+}
+
+.btn-login {
+    background: transparent;
+    border: 1px solid var(--purple-primary);
+    color: var(--text-primary);
+    padding: 8px 22px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color var(--transition-normal), box-shadow var(--transition-fast);
+}
+
+.btn-login:hover {
+    background-color: rgba(176, 38, 255, 0.15);
+    box-shadow: var(--shadow-purple);
+}
+
+.btn-subscribe {
+    background-color: var(--green-primary);
+    border: none;
+    color: var(--bg-main);
+    padding: 8px 22px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: var(--shadow-green);
+    transition: transform var(--transition-fast), background-color var(--transition-normal);
+}
+
+.btn-subscribe:hover {
+    background-color: var(--green-light);
+    transform: scale(1.03);
+}
+
+.navbar-expand-lg.navbar-megaflix .custom-toggler.navbar-toggler {
+    display: none;
+}
+
+/* ==========================================================================
+   ESTILOS DE LA PÁGINA DE CONTACTO (BODY Y SECCIÓN)
+   ========================================================================== */
+.body-contact {
+    background-color: var(--bg-main);
+    background-image: 
+        linear-gradient(rgba(5, 5, 5, 0.88), rgba(5, 5, 5, 0.93)), 
+        url(../images/fondo-contact.jpg); 
+        
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: 400px auto;
+    background-attachment: fixed;
+    
+    color: var(--text-primary);
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.contact-section {
+    padding: 140px 20px 60px 20px; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: var(--text-primary);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* ==========================================================================
+   FORMULARIO DE CONTACTO
+   ========================================================================== */
+.form-megaflix {
+    background-color: rgba(11, 11, 11, 0.65);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid var(--purple-primary); 
+    border-radius: var(--radius-md);
+    padding: 40px;
+    text-align: left;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 38, 255, 0.1); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-group-megaflix {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group-megaflix label {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-group-megaflix input,
+.input-group-megaflix textarea {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group-megaflix input:focus,
+.input-group-megaflix textarea:focus {
+    border-color: var(--purple-primary);
+    box-shadow: 0 0 10px rgba(176, 38, 255, 0.2);
+    background-color: rgba(5, 5, 5, 0.6);
+}
+
+.btn-enviar-contact {
+    background-color: var(--green-primary);
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-enviar-contact:hover {
+    background-color: var(--green-light);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CONTENEDOR DEL MAPA
+   ========================================================================== */
+.map-container-megaflix {
+    background-color: rgba(11, 11, 11, 0.65);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid var(--purple-primary); 
+    border-radius: var(--radius-md);
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 38, 255, 0.1); 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.map-info h3 {
+    color: var(--text-primary);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.map-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.map-info i {
+    color: var(--green-primary);
+    margin-right: 5px;
+}
+
+.map-container-megaflix iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 250px;
+    border: 0;
+    border-radius: 8px;
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+.map-container-megaflix iframe:hover {
+    filter: grayscale(30%) invert(92%) contrast(83%);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   MODAL DE PLANES (CON ESPECIFICIDAD DE SELECTORES SIN IMPORTANT)
+   ========================================================================== */
+.modal-dialog .modal-plans-content {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+.modal-dialog .modal-plans-header {
+    border-bottom: 1px solid var(--border-primary);
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.modal-plans-header .modal-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.modal-plans-header .modal-title span {
+    color: var(--green-primary);
+    text-shadow: var(--shadow-green);
+}
+
+.btn-close-custom {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    line-height: 1;
+}
+
+.btn-close-custom:hover {
+    color: var(--red-primary);
+}
+
+.modal-dialog .modal-plans-body {
+    padding: 30px 0 10px 0;
+    background: transparent;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: #08080a;
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
+    padding: 35px 25px;
+    flex: 1;
+    min-width: 270px;
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    background-color: #222;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.plan-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.plan-price {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+}
+
+.plan-price span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-plan-select {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-secondary);
+    background-color: transparent;
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all var(--transition-fast);
+}
+
+.btn-basico:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-primary);
+}
+
+/* Card Estándar */
+.plan-featured-purple {
+    border-color: var(--purple-primary);
+}
+
+.badge-purple-neon {
+    background-color: var(--purple-dark);
+    color: var(--purple-light);
+}
+
+.btn-estandar {
+    background-color: #a316ff;
+    border: none;
+    color: var(--text-primary);
+}
+
+.btn-estandar:hover {
+    background-color: var(--purple-primary);
+    box-shadow: var(--shadow-purple);
+}
+
+/* Card Premium */
+.plan-featured-premium {
+    border: 2px solid transparent;
+    background-image: linear-gradient(#08080a, #08080a), var(--gradient-premium);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.badge-premium-neon {
+    background: #44001a;
+    color: #ff3385;
+    border: 1px solid #ff3385;
+}
+
+.btn-premium-action {
+    background: var(--gradient-premium);
+    border: none;
+    color: #000000;
+}
+
+.btn-premium-action:hover {
+    box-shadow: var(--shadow-green);
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   MODAL LOGIN
+   ========================================================================== */
+.modal-dialog .modal-login-content {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--purple-primary);
+    border-radius: var(--radius-md);
+    padding: 30px 20px;
+    box-shadow: var(--shadow-purple);
+}
+
+.modal-dialog .modal-login-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: none;
+    background: transparent;
+}
+
+.modal-login-header .modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-login-header .modal-title span { 
+    color: var(--purple-primary); 
+}
+
+.modal-login-header .btn-close-custom {
+    position: absolute; 
+    top: -5px;
+    right: 5px;
+}
+
+.modal-dialog .modal-body {
+    background: transparent;
+}
+
+.login-form { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.login-form label { 
+    font-size: 11px; 
+    margin-top: 15px; 
+    color: var(--text-secondary); 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.login-form input { 
+    background: #000000; 
+    border: 1px solid var(--border-secondary); 
+    padding: 14px; 
+    color: #ffffff; 
+    border-radius: var(--radius-sm); 
+    margin-top: 8px; 
+    font-size: 14px;
+}
+
+.login-form input:focus { 
+    border-color: var(--purple-primary); 
+    outline: none; 
+    box-shadow: var(--shadow-purple); 
+}
+
+.forgot-password-link { 
+    color: var(--text-secondary); 
+    font-size: 13px; 
+    margin: 20px 0; 
+    text-decoration: none; 
+    transition: color var(--transition-fast); 
+}
+
+.forgot-password-link:hover { 
+    color: var(--purple-light); 
+}
+
+.btn-login-submit { 
+    background: #a316ff; 
+    border: none; 
+    padding: 14px; 
+    color: #ffffff; 
+    font-weight: 700; 
+    border-radius: var(--radius-sm); 
+    cursor: pointer; 
+    font-size: 15px;
+    transition: background var(--transition-fast);
+}
+
+.btn-login-submit:hover { 
+    background: var(--purple-primary); 
+    box-shadow: var(--shadow-purple);
+}
+
+/* PAGINA GRACIAS */
+/* Contenedor del mensaje de éxito */
+.success-message-wrapper {
+    max-width: 600px;
+}
+
+.alert-exit {
+    background-color: rgba(11, 11, 11, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid var(--purple-primary);
+    border-radius: var(--radius-md);
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 38, 255, 0.1);
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 48px;
+    color: var(--green-primary);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.success-title {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.success-text {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+}
+
+/* Ajuste específico para el botón de retorno */
+.btn-return {
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+    padding: 12px 30px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer-megaflix {
+    background-color: #050505;
+    background-image: linear-gradient(rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 0.92)), url('../images/logo.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 60%; 
+    border-top: 1px solid var(--border-primary);
+    padding: 60px 50px 20px 50px;
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.brand-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    color: var(--text-primary);
+    font-size: 18px;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--purple-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(176, 38, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-6px); 
+    border-color: var(--purple-light);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.7), inset 0 0 10px rgba(176, 38, 255, 0.3); 
+}
+
+.footer-col h4 {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col ul a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--green-primary);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-primary);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES DE CONTROL RESPONSIVO
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .navbar.navbar-megaflix {
+        padding: 15px 30px;
+    }
+    .navbar.navbar-megaflix .nav-menu {
+        gap: 15px;
+    }
+    .search-box input {
+        width: 160px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar.navbar-megaflix .container-fluid {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .navbar-expand-lg.navbar-megaflix .custom-toggler.navbar-toggler {
+        display: block; 
+        border-color: var(--purple-primary);
+        box-shadow: var(--shadow-purple);
+        padding: 6px 10px;
+        background: transparent;
+    }
+
+    .navbar-expand-lg.navbar-megaflix .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        display: block;
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .navbar.navbar-megaflix .navbar-collapse {
+        width: 100%;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+    }
+
+    .navbar-expand-lg.navbar-megaflix .navbar-collapse.show {
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(5, 5, 5, 0.98); 
+        backdrop-filter: blur(10px);
+        border: 1px solid var(--border-primary);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        margin-top: 15px;
+        gap: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    }
+
+    .navbar.navbar-megaflix .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        width: 100%;
+        border-bottom: 1px solid var(--border-primary);
+        padding-bottom: 15px;
+    }
+
+    .navbar-expand-lg.navbar-megaflix .nav-menu a {
+        font-size: 16px;
+        padding: 5px 0;
+        width: 100%;
+        display: block;
+    }
+
+    .navbar-expand-lg.navbar-megaflix .nav-menu a.active::after {
+        display: none;
+    }
+    
+    .navbar-expand-lg.navbar-megaflix .nav-menu a.active {
+        color: var(--green-primary);
+        font-weight: 700;
+    }
+
+    .nav-right-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 15px;
+        margin-left: 0;
+    }
+
+    .search-box, .search-box input {
+        width: 100%;
+    }
+
+    .btn-login, .btn-subscribe {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar.navbar-megaflix {
+        padding: 15px 20px;
+        background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95) 0%, rgba(5, 5, 5, 0.8) 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 50px;
+    }
+    .contact-section {
+        padding: 110px 15px 40px 15px; 
+    }
+    .contact-container h2 {
+        font-size: 24px;
+    }
+    .form-megaflix {
+        padding: 25px 20px;
+    }
+}
