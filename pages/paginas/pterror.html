@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Megaflix</title>
+    <link rel="stylesheet" href="../styles/pterror.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <section class="hero">
+
+    <video autoplay muted loop>
+        <source src="/trailres/the nun.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="info">
+
+        <h1>The Nun</h1>
+
+        <p>
+         The Nun es una película de terror sobrenatural que sigue a un sacerdote y una joven novicia que viajan a una abadía aislada en Rumania para investigar la misteriosa muerte de una monja. Allí descubren una presencia demoníaca conocida como Valak, una entidad maligna que adopta la apariencia de una aterradora monja.
+        </p>
+
+        <div class="datos">
+            <span>⏱ 1h 36min</span>
+            <span> 2018</span>
+            <span> +16</span>
+        </div>
+
+        <a href="./error404.html" class="boton">▶ Ver ahora</a>
+
+    </div>
+
+</section>
+
+ <div class="container-fluid my-4">
+         <h2 class="mb-4 fs-4 fw-bold">Películas de Terror</h2>
+
+     <div class="slider-container-wrapper">
+
+          <button class="btn-slider prev">
+            <i class="fa-solid fa-chevron-left"></i>
+         </button>
+          <div class="overflow-hidden d-flex flex-row gap-3 overflow-auto">   
+            <div class="movie-slider-track" id="movieTrack">
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/The Conjuring.webp"   width="300" height="300" class="img-fluid" alt="The Conjuring">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/Talk to Me.webp"   width="300" height="300" class="img-fluid" alt="Talk to Me">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/Scream.webp"   width="300" height="300" class="img-fluid" alt="Scream">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/it.jpg"   width="300" height="300" class="img-fluid" alt="IT">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/Insidious.jpg"   width="300" height="300" class="img-fluid" alt="Insidious">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/Hereditary.webp"   width="300" height="300" class="img-fluid" alt="Hereditary">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/Annabelle.jpg"   width="300" height="300" class="img-fluid" alt="Annabelle">
+                </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+                <a href="./error404.html">
+                    <img src="/img/peliculas categorias/terror/A Quiet Place.webp"   width="300" height="300" class="img-fluid" alt="A Quiet Place">
+                </a>
+            </div>
+
+        </div>
+
+        <button class="btn-slider next">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+     </div>
+       </div>
+
+     
+    </div>
+
+ <script>
+      document
+        .querySelectorAll(".slider-container-wrapper")
+        .forEach((slider) => {
+          const track = slider.querySelector(".movie-slider-track");
+
+          const prev = slider.querySelector(".prev");
+
+          const next = slider.querySelector(".next");
+
+          next.onclick = () => {
+            track.scrollBy({
+              left: 500,
+
+              behavior: "smooth",
+            });
+          };
+
+          prev.onclick = () => {
+            track.scrollBy({
+              left: -500,
+
+              behavior: "smooth",
+            });
+          };
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

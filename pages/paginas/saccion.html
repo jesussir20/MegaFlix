@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Megaflix</title>
+    <link rel="stylesheet" href="../styles/saccion.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <section class="hero">
+
+    <video autoplay muted loop>
+        <source src="/trailres/24.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="info">
+
+        <h1>24</h1>
+
+        <p>
+         24 es una serie de acción y suspenso que sigue a Jack Bauer, un agente de la Unidad Antiterrorista, mientras intenta detener amenazas terroristas que ponen en peligro a Estados Unidos. Cada temporada transcurre en tiempo real, mostrando 24 horas decisivas llenas de acción, tensión y giros inesperados.
+        </p>
+
+        <div class="datos">
+            <span>⏱  45min</span>
+            <span>1 temporada , 24 episodios</span>
+            <span> 2001</span>
+            <span> +16</span>
+        </div>
+
+        <a href="./error404.html" class="boton">▶ Ver ahora</a>
+
+    </div>
+
+</section>
+
+ <div class="container-fluid my-4">
+      <h2 class="mb-4 fs-4 fw-bold"></h2>
+
+      <div class="slider-container-wrapper">
+        <button class="btn-slider prev" >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="overflow-hidden d-flex flex-row gap-3 overflow-auto">
+          <div class="movie-slider-track" id="movieTrack">
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img
+                  src="/img/series categorias/accion/Vikings.webp" width="300" height="300" class="img-fluid"  alt="Peli"/>
+              </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img src="/img/series categorias/accion/The Punisher.webp" width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img
+                  src="/img/series categorias/accion/The Night Agent.webp"  width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img src="/img/series categorias/accion/Reacher.webp" width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+              <span class="badge-premium position-absolute top-0 end-0 m-2">
+                <i class="fa-solid fa-crown"></i>
+              </span>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img src="/img/series categorias/accion/Prison Break.webp" width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+              <span class="badge-premium position-absolute top-0 end-0 m-2">
+                <i class="fa-solid fa-crown"></i>
+              </span>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img
+                  src="/img/series categorias/accion/Jack Ryan.webp" width="300" height="300" class="img-fluid"  alt="Peli"/>
+              </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img src="/img/series categorias/accion/Cobra Kai.jpg" width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+            </div>
+
+            <div class="movie-card-wrapper">
+              <a href="./error404.html">
+                <img src="/img/series categorias/accion/Arrow.webp" width="300" height="300" class="img-fluid"  alt="Peli" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-slider next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+     
+    </div>
+ <script>
+      document
+        .querySelectorAll(".slider-container-wrapper")
+        .forEach((slider) => {
+          const track = slider.querySelector(".movie-slider-track");
+
+          const prev = slider.querySelector(".prev");
+
+          const next = slider.querySelector(".next");
+
+          next.onclick = () => {
+            track.scrollBy({
+              left: 500,
+
+              behavior: "smooth",
+            });
+          };
+
+          prev.onclick = () => {
+            track.scrollBy({
+              left: -500,
+
+              behavior: "smooth",
+            });
+          };
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>

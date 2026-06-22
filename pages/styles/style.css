@@ -1,0 +1,195 @@
+:root {
+    /* ===== FONDOS ===== */
+    --bg-main: #050505;
+    --bg-secondary: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-hover: #1a1a1a;
+    --bg-glass: rgba(15, 15, 15, 0.85);
+    /* ===== VERDES NEÓN ===== */
+    --green-primary: #39ff14;
+    --green-secondary: #00ff66;
+    --green-light: #7fff5f;
+    --green-dark: #00cc44;
+    /* ===== VIOLETAS ===== */
+    --purple-primary: #b026ff;
+    --purple-secondary: #8a2be2;
+    --purple-light: #d86bff;
+    --purple-dark: #5a00a8;
+    /* ===== NARANJAS ===== */
+    --orange-primary: #ff8c00;
+    --orange-secondary: #ff6b00;
+    --orange-light: #ffb347;
+    --orange-dark: #cc5500;
+    /* ===== ROJOS ===== */
+    --red-primary: #ff3d3d;
+    --red-secondary: #d7263d;
+    /* ===== TEXTO ===== */
+    --text-primary: #ffffff;
+    --text-secondary: #cfcfcf;
+    --text-muted: #8a8a8a;
+    /* ===== BORDES ===== */
+    --border-primary: #252525;
+    --border-secondary: #333333;
+    --border-neon-green: #39ff14;
+    --border-neon-purple: #b026ff;
+    --border-neon-orange: #ff8c00;
+    /* ===== SOMBRAS ===== */
+    --shadow-green: 0 0 10px rgba(57, 255, 20, 0.5);
+    --shadow-purple: 0 0 10px rgba(176, 38, 255, 0.5);
+    --shadow-orange: 0 0 10px rgba(255, 140, 0, 0.5);
+    /* ===== DEGRADADOS ===== */
+    --gradient-green: linear-gradient(135deg, #00ff66 0%, #39ff14 100%);
+    --gradient-purple: linear-gradient(135deg, #5a00a8 0%, #b026ff 100%);
+    --gradient-orange: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+    --gradient-premium: linear-gradient(90deg, #8a2be2 0%, #ff6b00 50%, #39ff14 100%);
+    /* ===== TRANSICIONES ===== */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    /* ===== BORDER RADIUS ===== */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+/* ==========================================================================
+   RESET GENERAL Y BODY
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main) !important; /* Fuerza tu color de fondo negro profundo */
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* Evita que la web sume barras raras a los costados */
+}
+
+h2 {
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   CONTENEDORES DEL CAROUSEL / SLIDER
+   ========================================================================== */
+.slider-container-wrapper {
+    position: relative; /* Clave para anclar los botones flotantes a los extremos */
+    width: 100%;
+}
+
+/* Pista interna que permite el deslizamiento horizontal */
+.movie-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    
+    /* El "colchón" de espacio para que no se corten las luces neón ni el zoom arriba y abajo */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Oculta la barra de scroll en Firefox e Internet Explorer/Edge antiguo */
+.movie-slider-track {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+/* Oculta la barra de scroll en Chrome, Safari, Opera y Edge moderno */
+.movie-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ==========================================================================
+   TARJETAS DE VIDEOS (ZOOM + BORDES CYBERPUNK)
+   ========================================================================== */
+.movie-card-wrapper {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-primary);
+    overflow: hidden;
+    min-width: 200px; /* Tamaño estandarizado para tus posters */
+    max-width: 200px;
+    height: 280px;    /* Altura consistente estilo catálogo vertical */
+    position: relative;
+    cursor: pointer;
+    /* Animación fluida para cada propiedad */
+    transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.movie-card-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que tus .webp e imágenes cubran todo el marco sin estirarse */
+    display: block;
+}
+
+/* EFECTO HOVER: Sobresale al frente con iluminación Neón Violeta */
+.movie-card-wrapper:hover {
+    transform: scale(1.08);
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-neon-purple);
+    box-shadow: var(--shadow-purple), 0 10px 25px rgba(0, 0, 0, 0.8);
+    z-index: 10; /* Se superpone limpiamente a las tarjetas laterales */
+}
+
+/* Insignia para las películas Premium (Arcoíris / Degradado) */
+.badge-premium {
+    background: var(--gradient-premium);
+    color: var(--text-primary);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    z-index: 5;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   BOTONES FLOTANTES DE NAVEGACIÓN (ESTILO CRISTAL)
+   ========================================================================== */
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25; /* Queda siempre por encima del zoom de las tarjetas */
+    background: var(--bg-glass);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
+    height: 65px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-fast);
+}
+
+/* HOVER EN BOTONES: Iluminación Neón Verde al apuntarlos */
+.btn-slider:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-neon-green);
+    color: var(--green-primary);
+    box-shadow: var(--shadow-green);
+}
+
+/* Posición exacta de la flecha izquierda */
+.prev {
+    left: 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Posición exacta de la flecha derecha */
+.next {
+    right: 0;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
