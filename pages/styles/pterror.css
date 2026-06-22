@@ -1,0 +1,274 @@
+:root {
+    /* ===== FONDOS DE TERROR / AMBIENTE GÓTICO ===== */
+    --bg-main: #050505;         /* Negro absoluto, opresivo y denso */
+    --bg-secondary: #0d0d11;    /* Gris ceniza muy oscuro */
+    --bg-card: #121216;         /* Fondo de tarjeta estilo lápida */
+    --bg-card-hover: #1a0505;   /* Tinte rojizo de peligro al hacer hover */
+    --bg-glass: rgba(5, 5, 5, 0.85); /* Cristal ahumado oscuro */
+    
+    /* ===== ROJOS VISCERALES Y SANGRE (PROTAGONISTAS) ===== */
+    --red-primary: #8b0000;     /* Rojo sangre oscuro */
+    --red-bright: #ff0000;      /* Rojo neón / Alerta máxima */
+    --red-glow: rgba(139, 0, 0, 0.6);
+    
+    /* ===== TONOS ESPECTRALES ===== */
+    --ghost-white: #f1f5f9;     /* Blanco espectral para títulos */
+    --mist-grey: #94a3b8;       /* Gris neblina para textos secundarios */
+    
+    /* ===== BORDES ===== */
+    --border-primary: #222226;
+    --border-secondary: #3f3f46;
+    --border-neon-red: #8b0000;
+    --border-active-red: #ff0000;
+    
+    /* ===== SOMBRAS PERTURBADORAS ===== */
+    --shadow-blood: 0 0 15px var(--red-glow);
+    --shadow-specter: 0 0 25px rgba(255, 0, 0, 0.25);
+    
+    /* ===== DEGRADADOS OSCUROS ===== */
+    --gradient-horror: linear-gradient(135deg, #4a0000 0%, #8b0000 100%);
+    --gradient-premium: linear-gradient(90deg, #8a2be2 0%, #ff6b00 50%, #39ff14 100%);
+    
+    /* ===== CONFIGURACIONES ===== */
+    --transition-horror: 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    --transition-fast: 0.15s ease;
+    --radius-sm: 2px;  
+    --radius-md: 4px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--bg-main) ;
+    color: var(--ghost-white);
+    font-family: 'Cinzel', 'Didot', 'Georgia', serif;
+    overflow-x: hidden;
+}
+
+p, span, button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 85vh;
+    overflow: hidden;
+    background-color: var(--bg-main);
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--bg-main) 2%, rgba(5, 5, 5, 0.6) 50%, transparent 100%);
+    z-index: 2;
+}
+
+.hero .info {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 60px;
+    max-width: 750px;
+}
+
+
+.hero .info h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--ghost-white);
+    text-shadow: var(--shadow-blood), 0 0 30px rgba(139, 0, 0, 0.4);
+}
+
+.hero .info p {
+    font-size: 1.05rem;
+    color: var(--mist-grey);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+
+.hero .datos span {
+    margin-right: 15px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--mist-grey);
+}
+
+.hero .datos span:nth-child(2) {
+    color: var(--ghost-white);
+}
+
+
+.hero .datos span:nth-child(3) {
+    color: var(--red-bright);
+    background-color: rgba(139, 0, 0, 0.15);
+    padding: 3px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--red-primary);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+}
+
+.hero .boton {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 42px;
+    background: var(--gradient-horror);
+    color: var(--ghost-white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    transition: var(--transition-fast);
+}
+
+.hero .boton:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--red-primary);
+    background: var(--red-bright);
+    border-color: var(--ghost-white);
+}
+
+
+.slider-container-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.movie-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+.movie-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.movie-card-wrapper {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    overflow: hidden;
+    min-width: 210px;
+    max-width: 210px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-horror), border-color var(--transition-horror), box-shadow var(--transition-horror);
+}
+
+.movie-card-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%) brightness(90%); 
+    transition: filter var(--transition-horror);
+}
+
+
+.movie-card-wrapper:hover {
+    transform: scale(1.08);
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-neon-red);
+    box-shadow: var(--shadow-specter), 0 12px 30px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+}
+
+.movie-card-wrapper:hover img {
+    filter: grayscale(0%) brightness(100%); 
+}
+
+/* Corona Premium */
+.badge-premium {
+    background: var(--gradient-premium);
+    color: var(--ghost-white);
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    z-index: 4;
+}
+
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-secondary);
+    color: var(--mist-grey);
+    height: 70px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+
+.btn-slider:hover {
+    background: #000000;
+    border-color: var(--border-active-red);
+    color: var(--red-bright);
+    box-shadow: var(--shadow-blood);
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.next {
+    right: 0;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}

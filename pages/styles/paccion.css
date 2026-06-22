@@ -1,0 +1,266 @@
+:root {
+    /* ===== FONDOS TÁCTICOS Y DE ADRENALINA ===== */
+    --bg-main: #0b0c0e;         /* Gris carbón militar profundo */
+    --bg-secondary: #13151a;    /* Tono para contenedores y paneles */
+    --bg-card: #1a1d24;         /* Base sólida para las tarjetas de acción */
+    --bg-card-hover: #222731;   /* Iluminación de metal pulido en hover */
+    --bg-glass: rgba(11, 12, 14, 0.85); /* Cristal ahumado antibalas */
+    
+    /* ===== ENERGÍA Y ADRENALINA (FUEGO Y PELIGRO) ===== */
+    --action-primary: #ff2a2a;   /* Rojo fuego / Alerta y peligro */
+    --action-accent: #ff7b00;    /* Naranja explosivo / Fogonazo */
+    --action-glow: rgba(255, 42, 42, 0.35);
+    
+    /* ===== TEXTO ===== */
+    --text-primary: #ffffff;
+    --text-secondary: #f1f5f9;   /* Blanco puro de alto contraste */
+    --text-muted: #64748b;       /* Gris ceniza */
+    
+    /* ===== BORDES DE ACERO ===== */
+    --border-primary: #232830;
+    --border-secondary: #3b4252;
+    --border-neon-red: #ff2a2a;
+    
+    /* ===== DEGRADADOS METÁLICOS Y VOLCÁNICOS ===== */
+    --gradient-action: linear-gradient(135deg, #ff2a2a 0%, #ff7b00 100%);
+    --gradient-premium: linear-gradient(90deg, #ff7b00 0%, #b10000 100%);
+    
+    /* ===== CONFIGURACIONES DE IMPACTO ===== */
+    --transition-snap: 0.25s cubic-bezier(0.25, 1, 0.5, 1); /* Transición rápida e impactante */
+    --transition-fast: 0.12s ease;
+    --radius-sm: 4px;   /* Ángulos más rectos y agresivos */
+    --radius-md: 10px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--bg-main) ;
+    color: var(--text-primary);
+    font-family: 'Impact', 'Oswald', 'Inter', 'Segoe UI', sans-serif; 
+    overflow-x: hidden;
+}
+
+p, .hero .datos span {
+    font-family: 'Inter', sans-serif;
+}
+
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 82vh;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--bg-main) 4%, rgba(11, 12, 14, 0.3) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.hero .info {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 60px;
+    max-width: 750px;
+}
+
+
+.hero .info h1 {
+    font-size: 6rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 42, 42, 0.5), 2px 2px 0px #000000;
+}
+
+.hero .info p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+
+.hero .datos span {
+    margin-right: 15px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+
+.hero .datos span:nth-child(2) {
+    color: var(--action-accent);
+}
+
+
+.hero .datos span:nth-child(3) {
+    color: #ffffff;
+    background-color: var(--action-primary);
+    padding: 3px 12px;
+    border-radius: var(--radius-sm);
+    font-weight: 800;
+    box-shadow: 0 0 10px var(--action-glow);
+}
+
+
+.hero .boton {
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 45px;
+    background: var(--gradient-action);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(255, 42, 42, 0.4);
+    transition: var(--transition-fast);
+}
+
+.hero .boton:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px var(--action-primary);
+    filter: brightness(1.2);
+}
+
+
+.slider-container-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden ;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.movie-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+.movie-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+.movie-card-wrapper {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-sm); 
+    border: 1px solid var(--border-primary);
+    overflow: hidden;
+    min-width: 210px;
+    max-width: 210px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-snap), border-color var(--transition-snap), box-shadow var(--transition-snap);
+}
+
+.movie-card-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.movie-card-wrapper:hover {
+    transform: scale(1.05) translateY(-5px);
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-neon-red);
+    box-shadow: 0 10px 20px var(--action-glow), 0 5px 15px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.badge-premium {
+    background: var(--gradient-premium);
+    color: #ffffff;
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    z-index: 4;
+}
+
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-primary);
+    height: 60px;
+    width: 40px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+
+.btn-slider:hover {
+    background: var(--action-primary);
+    border-color: var(--action-primary);
+    color: #ffffff;
+    box-shadow: 0 0 15px var(--action-primary);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}

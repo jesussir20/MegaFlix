@@ -1,0 +1,266 @@
+:root {
+    /* ===== FONDOS TECNOLÓGICOS / ESPACIALES ===== */
+    --bg-main: #07090e;         /* Gris/Azul cibernético ultra profundo */
+    --bg-secondary: #0f131a;    /* Color de consola de comandos */
+    --bg-card: #151b26;         /* Base para las naves y portadas */
+    --bg-card-hover: #081a2e;   /* Flujo de energía cuántica en hover */
+    --bg-glass: rgba(7, 9, 14, 0.85); /* Cristal de interfaz holográfica */
+    
+    /* ===== ENERGÍA Y LUZ (BIOLUMINISCENCIA / CYBER) ===== */
+    --sci-fi-primary: #00f0ff;  /* Cian eléctrico / Luz de interfaz */
+    --sci-fi-secondary: #00a8ff; /* Azul de hiperespacio */
+    --sci-fi-accent: #39ff14;   /* Verde láser / Matriz de datos */
+    --sci-fi-glow: rgba(0, 240, 255, 0.4);
+    
+    /* ===== TEXTO ===== */
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;   /* Blanco limpio digital */
+    --text-muted: #64748b;       /* Gris de código desactivado */
+    
+    /* ===== BORDES ELECTRÓNICOS ===== */
+    --border-primary: #1e293b;
+    --border-secondary: #334155;
+    --border-neon-cyan: #00f0ff;
+    --border-neon-green: #39ff14;
+    
+    /* ===== SOMBRAS CUÁNTICAS ===== */
+    --shadow-hologram: 0 0 15px var(--sci-fi-glow);
+    --shadow-laser: 0 0 12px rgba(57, 255, 20, 0.5);
+    
+    /* ===== DEGRADADOS DE ALTA TECNOLOGÍA ===== */
+    --gradient-hologram: linear-gradient(135deg, #0055ff 0%, #00f0ff 100%);
+    --gradient-premium: linear-gradient(90deg, #00f0ff 0%, #7000ff 50%, #39ff14 100%);
+    
+    /* ===== CONFIGURACIONES ===== */
+    --transition-matrix: 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transición limpia y calibrada */
+    --transition-fast: 0.15s ease;
+    --radius-sm: 4px;   /* Geometría precisa, cortes tecnológicos */
+    --radius-md: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--bg-main) ;
+    color: var(--text-primary);
+    font-family: 'Orbitron', 'Chakrapetch', 'Ubuntu Mono', 'Segoe UI', sans-serif; 
+    overflow-x: hidden;
+}
+
+
+p, .hero .datos span {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 82vh;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--bg-main) 3%, rgba(7, 9, 14, 0.4) 60%, transparent 100%);
+    z-index: 2;
+}
+
+.hero .info {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 60px;
+    max-width: 750px;
+}
+
+
+.hero .info h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    text-shadow: var(--shadow-hologram), 0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+.hero .info p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+}
+
+
+.hero .datos span {
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+}
+
+.hero .datos span:nth-child(2) {
+    color: var(--sci-fi-primary);
+}
+
+
+.hero .datos span:nth-child(3) {
+    color: var(--sci-fi-accent);
+    background-color: rgba(57, 255, 20, 0.08);
+    padding: 3px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--sci-fi-accent);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+}
+
+.hero .boton {
+    font-family: 'Segoe UI', sans-serif;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 40px;
+    background: transparent;
+    color: var(--sci-fi-primary);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--sci-fi-primary);
+    box-shadow: var(--shadow-hologram), inset 0 0 10px rgba(0, 240, 255, 0.2);
+    transition: var(--transition-fast);
+}
+
+.hero .boton:hover {
+    transform: scale(1.03);
+    background: var(--sci-fi-primary);
+    color: var(--bg-main);
+    box-shadow: 0 0 25px var(--sci-fi-primary);
+}
+
+
+.slider-container-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden ;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.movie-slider-track {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+.movie-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card-wrapper {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    overflow: hidden;
+    min-width: 210px;
+    max-width: 210px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-matrix), border-color var(--transition-matrix), box-shadow var(--transition-matrix);
+}
+
+.movie-card-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.movie-card-wrapper:hover {
+    transform: scale(1.05) translateY(-4px);
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-neon-cyan);
+    box-shadow: var(--shadow-hologram), 0 10px 25px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.badge-premium {
+    background: var(--gradient-premium);
+    color: var(--bg-main);
+    padding: 5px 8px;
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    z-index: 4;
+}
+
+.btn-slider {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 25;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-secondary);
+    color: var(--text-secondary);
+    height: 70px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-slider:hover {
+    background: #000000;
+    border-color: var(--border-neon-green);
+    color: var(--sci-fi-accent);
+    box-shadow: var(--shadow-laser);
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.next {
+    right: 0;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
